@@ -1,5 +1,6 @@
-require("@nomicfoundation/hardhat-toolbox");
-require('hardhat-deploy')
+require("@nomicfoundation/hardhat-toolbox")
+require("hardhat-deploy")
+require('dotenv').config()
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
@@ -18,18 +19,24 @@ module.exports = {
     }
   },
   localhost: {
-    url: 'http://127.0.0.1:8545/',
+    url: "http://127.0.0.1:8545/",
     // accounts: Thanks to Hardhat
     chainId: 31337,
   },
   namedAccounts: {
     deployer: {
       default: 0,
-      11155111: 1
+      11155111: 1,
     },
     user: {
-      default: 1
-    }
+      default: 1,
+    },
   },
-  solidity: "0.8.7",
-};
+  // solidity: "0.8.7",
+  solidity: {
+    compilers: [
+      {version: "0.8.7"},
+      {version: "0.8.0"}
+    ]
+  }
+}
