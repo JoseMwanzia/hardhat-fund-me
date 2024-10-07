@@ -32,6 +32,17 @@ module.exports = {
       default: 1,
     },
   },
+  gasReporter: {
+    enabled: false,
+    currency: "USD",
+    outputFile: "gas-report.txt",
+    noColors: true,
+    coinmarketcap: COINMARKETCAP_API_KEY,
+    token: 'MATIC'
+  },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY
+  },
   // solidity: "0.8.7",
   solidity: {
     compilers: [
